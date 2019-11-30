@@ -1,5 +1,6 @@
 package com.sarming.ognlstudy.demo;
 
+import com.sarming.ognlstudy.demo.entity.Group;
 import com.sarming.ognlstudy.demo.entity.User;
 import ognl.Ognl;
 import ognl.OgnlContext;
@@ -12,18 +13,22 @@ public class OgnlDemo {
     public static void main(String[] args) throws OgnlException {
 
 //        testGetValue();
-//        testSetValue();
+        testSetValue();
 
     }
 
     private static void testSetValue() throws OgnlException {
+        // 创建root对象
         User user = new User();
         user.setId(2);
         user.setName("sarming");
+        user.setGroup(new Group());
 
         Ognl.setValue("group.name", user, "dev");
         Ognl.setValue("age", user, 18);
+        Ognl.setValue("age", user, 40);
         System.out.println(user.getGroup().getName());
+        System.out.println(user.getAge());
 
     }
 
@@ -48,8 +53,6 @@ public class OgnlDemo {
 
 
     }
-
-
 
 
 }

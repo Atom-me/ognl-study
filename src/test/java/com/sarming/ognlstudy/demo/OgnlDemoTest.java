@@ -14,11 +14,12 @@ import java.util.Map;
  * 可以存取对象对任意属性，调用对象对方法，遍历整个对象对结构图，实现字段类型转化功能。
  * OGNL 提供一个上下文OgnlContext 实现了Map接口
  * OGNL 三要素： expression,context，root
- *
+ * <p>
  * OGNL应用：
  * 1,Struts2 里面引入了ognl
  * 2,MyBatis对OGNL做了封装。
- *
+ * <p>
+ * OGNL应用：https://www.jianshu.com/p/c5c284ccaadd
  */
 class OgnlDemoTest {
 
