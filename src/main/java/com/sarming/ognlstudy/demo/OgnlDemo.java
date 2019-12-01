@@ -1,9 +1,9 @@
 package com.sarming.ognlstudy.demo;
 
+import com.fasterxml.jackson.databind.ObjectMapper;
 import com.sarming.ognlstudy.demo.entity.Group;
 import com.sarming.ognlstudy.demo.entity.User;
 import ognl.Ognl;
-import ognl.OgnlContext;
 import ognl.OgnlException;
 
 import java.util.HashMap;
@@ -14,6 +14,7 @@ public class OgnlDemo {
 
 //        testGetValue();
         testSetValue();
+        convertValueUseObjectMapper();
 
     }
 
@@ -52,6 +53,21 @@ public class OgnlDemo {
         System.out.println(value1);
 
 
+    }
+
+
+    /**
+     * 转换对象为map
+     */
+    public static void convertValueUseObjectMapper() {
+        ObjectMapper objectMapper = new ObjectMapper();
+        User user = new User();
+        user.setGroup(new Group());
+        user.setName("atom");
+        user.setId(33);
+        user.setAge(99);
+        Map map = objectMapper.convertValue(user, Map.class);
+        System.out.println(map);
     }
 
 
